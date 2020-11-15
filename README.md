@@ -30,9 +30,9 @@ Antes de executar o projeto, realize o seguinte comando
 
 ```
 - Docker
-- java 1.8
+- Java 1.8
 - Maven
-- hibernate
+- Hibernate
 - JPA
 - POSTGRES
 ```
