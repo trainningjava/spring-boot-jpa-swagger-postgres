@@ -17,8 +17,7 @@ Antes de executar o projeto, realize o seguinte comando
 - POSTGRES
 ```
 
-Editor Swagger Online:
-- [arquivo yaml][swagger]
+Pode usar [Editor Swagger Online][swagger] para abrir o arquivo swagger.yaml
 
 ## :iphone: Telas
 
