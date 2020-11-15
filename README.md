@@ -1,3 +1,22 @@
+## :information_source: Informações do desafio
+
+Construa o código que contemple as seguintes operações expostas como endpoints REST para:
+
+* Cadastrar Produto
+* Cadastrar Lotes do Armazem
+* Cadastrar Valor
+* Consultar Produto
+* Consultar Armazem
+* Remover Produto
+* Remover Lotes do Armazem
+* Remover Valor
+
+Considere o cadastro com dados básicos:
+
+* Produto: nome, ...
+* Lotes do Armazem: nome, ...
+* Valor: valor, ...
+
 
 ## :seedling: Uso 
 
@@ -10,8 +29,9 @@ Antes de executar o projeto, realize o seguinte comando
 ## :rocket: Tecnologias Utilizadas 
 
 ```
-- docker
+- Docker
 - java 1.8
+- Maven
 - hibernate
 - JPA
 - POSTGRES
