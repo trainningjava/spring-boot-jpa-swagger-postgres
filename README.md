@@ -37,7 +37,7 @@ Antes de executar o projeto, realize o seguinte comando
 - POSTGRES
 ```
 
-Pode usar [Editor Swagger Online][swagger] para abrir o arquivo swagger.yaml
+Pode usar [Editor Swagger Online][swagger] para abrir o arquivo [swagger.yaml](https://github.com/trainningjava/spring-boot-jpa-swagger-postgres/blob/master/public/swagger/swagger.yaml)
 
 ## :iphone: Telas
 
