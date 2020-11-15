@@ -1,0 +1,484 @@
+swagger: "2.0"
+info:
+  description: "API REST de cadastro de produtos."
+  version: "1.0.0"
+  title: "Produtos API REST"
+  termsOfService: "http://swagger.io/terms/"
+  contact: {}
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: 'localhost:8080'
+basePath: /
+tags:
+  - name: armazenamento-resource
+    description: Armazenamento Resource
+  - name: produto-resource
+    description: Produto Resource
+  - name: valor-resource
+    description: Valor Resource
+paths:
+  /api/armazem:
+    get:
+      tags:
+        - armazenamento-resource
+      summary: Retorna uma lista de Valores
+      operationId: listaValorsUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Armazenamento'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - armazenamento-resource
+      summary: Salva um Valor
+      operationId: salvaValorUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: armazem
+          description: armazem
+          required: true
+          schema:
+            $ref: '#/definitions/Armazenamento'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Armazenamento'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - armazenamento-resource
+      summary: Atualiza um Valor
+      operationId: atualizaValorUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: armazem
+          description: armazem
+          required: true
+          schema:
+            $ref: '#/definitions/Armazenamento'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Armazenamento'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - armazenamento-resource
+      summary: Deleta um Valor
+      operationId: deletaValorUsingDELETE
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: armazem
+          description: armazem
+          required: true
+          schema:
+            $ref: '#/definitions/Armazenamento'
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  '/api/armazem/{id}':
+    get:
+      tags:
+        - armazenamento-resource
+      summary: Retorna um Valor unico
+      operationId: listaValorsUnicoUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Armazenamento'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/getInfo:
+    get:
+      tags:
+        - produto-resource
+      summary: getJoinInformation
+      operationId: getJoinInformationUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ProdutoResposta'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/produtos:
+    get:
+      tags:
+        - produto-resource
+      summary: Retorna uma lista de Produtos
+      operationId: listaProdutosUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Produto'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - produto-resource
+      summary: Salva um produto
+      operationId: salvaProdutoUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: produto
+          description: produto
+          required: true
+          schema:
+            $ref: '#/definitions/Produto'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Produto'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - produto-resource
+      summary: Atualiza um produto
+      operationId: atualizaProdutoUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: produto
+          description: produto
+          required: true
+          schema:
+            $ref: '#/definitions/Produto'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Produto'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - produto-resource
+      summary: Deleta um produto
+      operationId: deletaProdutoUsingDELETE
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: produto
+          description: produto
+          required: true
+          schema:
+            $ref: '#/definitions/Produto'
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  '/api/produtos/{id}':
+    get:
+      tags:
+        - produto-resource
+      summary: Retorna um produto unico
+      operationId: listaProdutosUnicoUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Produto'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/valor:
+    get:
+      tags:
+        - valor-resource
+      summary: Retorna uma lista de Valores
+      operationId: listaValorsUsingGET_1
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ValorProd'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - valor-resource
+      summary: Salva um Valor
+      operationId: salvaValorUsingPOST_1
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: Valor
+          description: Valor
+          required: true
+          schema:
+            $ref: '#/definitions/ValorProd'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ValorProd'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - valor-resource
+      summary: Atualiza um Valor
+      operationId: atualizaValorUsingPUT_1
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: Valor
+          description: Valor
+          required: true
+          schema:
+            $ref: '#/definitions/ValorProd'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ValorProd'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - valor-resource
+      summary: Deleta um Valor
+      operationId: deletaValorUsingDELETE_1
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: Valor
+          description: Valor
+          required: true
+          schema:
+            $ref: '#/definitions/ValorProd'
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  '/api/valor/{id}':
+    get:
+      tags:
+        - valor-resource
+      summary: Retorna um Valor unico
+      operationId: listaValorsUnicoUsingGET_1
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ValorProd'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Armazenamento:
+    type: object
+    properties:
+      bloqueado:
+        type: boolean
+      id:
+        type: integer
+        format: int64
+      lote:
+        type: string
+      produto:
+        $ref: '#/definitions/Produto'
+      quantidade:
+        type: number
+    title: Armazenamento
+  Produto:
+    type: object
+    properties:
+      ativo:
+        type: boolean
+      id:
+        type: integer
+        format: int64
+      nome:
+        type: string
+    title: Produto
+  ProdutoResposta:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      lastModifiedDate:
+        type: string
+        format: date-time
+      lote:
+        type: string
+      nome:
+        type: string
+      quantidade:
+        type: number
+      valor:
+        type: number
+    title: ProdutoResposta
+  ValorProd:
+    type: object
+    properties:
+      armazenamento:
+        $ref: '#/definitions/Armazenamento'
+      id:
+        type: integer
+        format: int64
+      lastModifiedDate:
+        type: string
+        example: dd/MM/yyyy
+      valor:
+        type: number
+    title: ValorProd
